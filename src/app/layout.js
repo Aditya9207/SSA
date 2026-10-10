@@ -1,5 +1,20 @@
+import { Noto_Serif_Devanagari, Hind } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "../context/LanguageContext";
+
+const notoSerifDevanagari = Noto_Serif_Devanagari({
+  subsets: ["devanagari"],
+  weight: ["500", "600", "700"],
+  variable: "--font-mr",
+  display: "swap",
+});
+
+const hind = Hind({
+  subsets: ["devanagari", "latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-hi",
+  display: "swap",
+});
 
 export const metadata = {
   title: "श्री स्वामी समर्थ एजन्सी | Shree Swami Samarth Agency | Agricultural Implements",
@@ -25,12 +40,22 @@ export const metadata = {
     shortcut: "/images/logo.png",
     apple: "/images/logo.png",
   },
+  other: {
+    'color-scheme': 'light',
+  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="mr" suppressHydrationWarning>
+    <html lang="mr" className={`${notoSerifDevanagari.variable} ${hind.variable}`} suppressHydrationWarning>
       <head>
+        <meta name="color-scheme" content="light" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"

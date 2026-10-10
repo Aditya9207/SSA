@@ -73,9 +73,9 @@ export default function Hero() {
             {/* Brand chips */}
             <div className="hero-brands">
               <span className="hero-brands-sep">{t.hero_auth_dealer || 'Authorized Dealer'}</span>
-              <div className="brand-chip">Swan Agro</div>
-              <div className="brand-chip">Popular Group</div>
-              <div className="brand-chip">Since 2011</div>
+              <div className="brand-chip">{t.chip_swan_auth || 'Swan Agro'}</div>
+              <div className="brand-chip">{t.chip_popular_auth || 'Popular Group'}</div>
+              <div className="brand-chip">{t.chip_since_2011 || 'Since 2011'}</div>
             </div>
           </div>
         </div>

@@ -12,23 +12,46 @@ const LanguageContext = createContext({
 export function LanguageProvider({ children }) {
   const [lang, setLangState] = useState('mr');
 
+  const applyLanguageMeta = (l) => {
+    if (typeof document === 'undefined') return;
+    document.documentElement.lang = l;
+    const trans = translations[l] || translations.mr;
+    if (trans.meta_title) {
+      document.title = trans.meta_title;
+    }
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && trans.meta_desc) {
+      metaDesc.setAttribute('content', trans.meta_desc);
+    }
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle && trans.meta_title) {
+      ogTitle.setAttribute('content', trans.meta_title);
+    }
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc && trans.meta_desc) {
+      ogDesc.setAttribute('content', trans.meta_desc);
+    }
+  };
+
   useEffect(() => {
     try {
       const saved = localStorage.getItem('ssa_lang');
-      if (saved && (saved === 'mr' || saved === 'hi' || saved === 'en')) {
+      if (saved && (saved === 'hi' || saved === 'en')) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setLangState(saved);
-        document.documentElement.lang = saved;
+        applyLanguageMeta(saved);
+        return;
       }
     } catch {
       // ignore
     }
+    applyLanguageMeta('mr');
   }, []);
 
   const setLang = (newLang) => {
     setLangState(newLang);
     try {
       localStorage.setItem('ssa_lang', newLang);
-      document.documentElement.lang = newLang;
     } catch {
       // ignore in incognito or restricted environments
     }

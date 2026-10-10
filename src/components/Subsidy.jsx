@@ -69,7 +69,7 @@ export default function Subsidy() {
             </div>
             <h3 className="finance-title">{t.finance_title || 'सोपे फायनान्स पर्याय'}</h3>
             <blockquote className="finance-quote">
-              "{t.finance_quote || 'TVS Finance द्वारे सोप्या हप्त्यांवर (EMI) फायनान्स उपलब्ध. किमान कागदपत्रे, कमी व्याजदर आणि त्वरित मंजुरी.'}"
+              &ldquo;{t.finance_quote || 'TVS Finance द्वारे सोप्या हप्त्यांवर (EMI) फायनान्स उपलब्ध. किमान कागदपत्रे, कमी व्याजदर आणि त्वरित मंजुरी.'}&rdquo;
             </blockquote>
             <div className="finance-badges">
               <div className="fin-badge fin-badge-highlight">

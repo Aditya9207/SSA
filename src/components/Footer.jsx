@@ -138,9 +138,9 @@ export default function Footer() {
         <div className="footer-bottom">
           <div className="footer-copy">{t.footer_copy || '© २०२६ श्री स्वामी समर्थ एजन्सी. सर्व हक्क सुरक्षित.'}</div>
           <div className="footer-chips">
-            <div className="footer-chip">Swan Agro Authorized</div>
-            <div className="footer-chip">Popular Group Authorized</div>
-            <div className="footer-chip">Since 2011</div>
+            <div className="footer-chip">{t.chip_swan_auth || 'Swan Agro Authorized'}</div>
+            <div className="footer-chip">{t.chip_popular_auth || 'Popular Group Authorized'}</div>
+            <div className="footer-chip">{t.chip_since_2011 || 'Since 2011'}</div>
           </div>
         </div>
       </div>

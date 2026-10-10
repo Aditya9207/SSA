@@ -2,9 +2,17 @@
 
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { sendLeadToSheet } from '../utils/sheetService';
+
+const langNameMap = {
+  mr: 'मराठी',
+  hi: 'हिंदी',
+  en: 'English',
+};
 
 export default function Contact({ onShowToast }) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -17,7 +25,7 @@ export default function Contact({ onShowToast }) {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, phone, product, branch, message } = formData;
 
@@ -31,6 +39,24 @@ export default function Contact({ onShowToast }) {
       return;
     }
 
+    setIsSubmitting(true);
+
+    // 1. Send data to Google Sheet
+    try {
+      await sendLeadToSheet({
+        name,
+        phone,
+        product,
+        branch,
+        message,
+        source: 'संपर्क फॉर्म',
+        language: langNameMap[lang] || 'मराठी',
+      });
+    } catch (err) {
+      console.error('Failed to log lead to sheet:', err);
+    }
+
+    // 2. Open WhatsApp with prefilled message
     const waMsg = encodeURIComponent(
       `🙏 ${t.hero_title_1 || 'श्री स्वामी समर्थ'} ${t.hero_title_2 || 'एजन्सी'}!\n\n` +
       `👤 ${t.form_name ? t.form_name.replace('*','').trim() : 'नाव'}: ${name}\n` +
@@ -44,10 +70,41 @@ export default function Contact({ onShowToast }) {
     window.open(`https://wa.me/918806595075?text=${waMsg}`, '_blank');
     if (onShowToast) onShowToast(t.msg_sent_success || '✅ संदेश यशस्वीरित्या पाठवला!', 'success');
     setFormData({ name: '', phone: '', product: '', branch: '', message: '' });
+    setIsSubmitting(false);
   };
 
-  const handleDirectWhatsApp = () => {
-    window.open('https://wa.me/918806595075', '_blank');
+  const handleDirectWhatsApp = async () => {
+    const { name, phone, product, branch, message } = formData;
+
+    // If user filled in their name or phone, also record it in the Google Sheet!
+    if (name.trim() || phone.trim()) {
+      try {
+        await sendLeadToSheet({
+          name: name.trim() || '—',
+          phone: phone.trim() || '—',
+          product: product || '—',
+          branch: branch || '—',
+          message: message || 'थेट व्हॉट्सअप चौकशी',
+          source: 'थेट व्हॉट्सअप बटण',
+          language: langNameMap[lang] || 'मराठी',
+        });
+      } catch (err) {
+        console.error('Failed to log lead to sheet:', err);
+      }
+
+      const waMsg = encodeURIComponent(
+        `🙏 ${t.hero_title_1 || 'श्री स्वामी समर्थ'} ${t.hero_title_2 || 'एजन्सी'}!\n\n` +
+        (name.trim() ? `👤 ${t.form_name ? t.form_name.replace('*','').trim() : 'नाव'}: ${name}\n` : '') +
+        (phone.trim() ? `📱 ${t.form_phone ? t.form_phone.replace('*','').trim() : 'मोबाईल'}: ${phone}\n` : '') +
+        (product ? `🚜 ${t.form_product ? t.form_product.replace('?','').trim() : 'उत्पादन/सेवा'}: ${product}\n` : '') +
+        (branch ? `📍 ${t.form_branch || 'शाखा'}: ${branch}\n` : '') +
+        (message ? `💬 ${t.form_message || 'संदेश'}: ${message}\n` : '') +
+        `_(${t.nav_home || 'Website'})_`
+      );
+      window.open(`https://wa.me/918806595075?text=${waMsg}`, '_blank');
+    } else {
+      window.open('https://wa.me/918806595075', '_blank');
+    }
   };
 
   return (
@@ -145,11 +202,25 @@ export default function Contact({ onShowToast }) {
                 </div>
               </div>
               <div className="form-actions">
-                <button type="submit" suppressHydrationWarning className="btn-submit">
-                  <i className="ph-bold ph-paper-plane-tilt"></i> {t.form_submit || 'संदेश पाठवा'}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  suppressHydrationWarning
+                  className="btn-submit"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <i className="ph-bold ph-spinner spin-anim"></i> {lang === 'en' ? 'Submitting...' : lang === 'hi' ? 'दर्ज हो रहा है...' : 'नोंदवत आहे...'}
+                    </>
+                  ) : (
+                    <>
+                      <i className="ph-bold ph-paper-plane-tilt"></i> {t.form_submit || 'संदेश पाठवा'}
+                    </>
+                  )}
                 </button>
                 <button
                   type="button"
+                  disabled={isSubmitting}
                   suppressHydrationWarning
                   className="btn-wa-contact"
                   onClick={handleDirectWhatsApp}

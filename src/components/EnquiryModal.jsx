@@ -2,15 +2,23 @@
 
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { sendLeadToSheet } from '../utils/sheetService';
+
+const langNameMap = {
+  mr: 'मराठी',
+  hi: 'हिंदी',
+  en: 'English',
+};
 
 export default function EnquiryModal({ isOpen, productName, onClose, onShowToast }) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!name.trim() || !phone.trim()) {
       if (onShowToast) onShowToast(t.err_fill_form || '⚠️ कृपया नाव व मोबाईल नंबर भरा', 'warning');
@@ -22,6 +30,23 @@ export default function EnquiryModal({ isOpen, productName, onClose, onShowToast
       return;
     }
 
+    setIsSubmitting(true);
+
+    // Record product enquiry to Google Sheet
+    try {
+      await sendLeadToSheet({
+        name,
+        phone,
+        product: productName || '—',
+        branch: '—',
+        message: 'उत्पादन चौकशी (Product Modal Inquiry)',
+        source: 'उत्पादन चौकशी (Product Modal)',
+        language: langNameMap[lang] || 'मराठी',
+      });
+    } catch (err) {
+      console.error('Failed to log product lead to sheet:', err);
+    }
+
     const waMsg = encodeURIComponent(
       `🙏 ${productName} - ${t.modal_enquiry_head || 'चौकशी'}\n\n👤 ${t.form_name ? t.form_name.replace('*','').trim() : 'नाव'}: ${name}\n📱 ${t.form_phone ? t.form_phone.replace('*','').trim() : 'मोबाईल'}: ${phone}\n_(${t.nav_home || 'Website'})_`
     );
@@ -30,6 +55,7 @@ export default function EnquiryModal({ isOpen, productName, onClose, onShowToast
     if (onShowToast) onShowToast(t.msg_opening_wa || '✅ व्हॉट्सअप उघडत आहे...', 'success');
     setName('');
     setPhone('');
+    setIsSubmitting(false);
     onClose();
   };
 
@@ -78,10 +104,19 @@ export default function EnquiryModal({ isOpen, productName, onClose, onShowToast
           />
           <button
             type="submit"
+            disabled={isSubmitting}
             className="btn btn-green btn-lg"
             style={{ width: '100%' }}
           >
-            <i className="ph-bold ph-whatsapp-logo"></i> {t.modal_wa_btn || 'व्हॉट्सअपवर संपर्क साधा'}
+            {isSubmitting ? (
+              <>
+                <i className="ph-bold ph-spinner spin-anim"></i> {lang === 'en' ? 'Submitting...' : lang === 'hi' ? 'दर्ज हो रहा है...' : 'नोंदवत आहे...'}
+              </>
+            ) : (
+              <>
+                <i className="ph-bold ph-whatsapp-logo"></i> {t.modal_wa_btn || 'व्हॉट्सअपवर संपर्क साधा'}
+              </>
+            )}
           </button>
         </form>
       </div>

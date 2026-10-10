@@ -9,22 +9,25 @@ export default function Branches() {
   const branches = [
     {
       num: 1,
-      name: t.branch1_name || 'शाखा १ — सांगली',
-      addr: t.branch1_addr || 'विष्णूअण्णा फळ मार्केट शेजारी, सांगली',
-      phone: '+918806595075',
-      mapQuery: 'Sangli+Fruit+Market',
-      mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.156891391587!2d74.5768!3d16.8524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDUxJzA4LjYiTiA7NMKwMzQnMzYuNSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin',
-    },
-    {
-      num: 2,
-      name: t.branch2_name || 'शाखा २ — कुमठा फाटा',
-      addr: t.branch2_addr || 'सिद्धेश्वर मंगल कार्यालयाशेजारी, कुमठा फाटा',
+      isMain: true,
+      name: t.branch1_name || 'मुख्य शाखा — कुमठा फाटा',
+      addr: t.branch1_addr || 'सिद्धेश्वर मंगल कार्यालयाशेजारी, कुमठा फाटा',
       phone: '+918806595075',
       mapQuery: 'Kumtha+Fata',
       mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.0!2d74.6!3d16.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDUxJzAwLjAiTiA7NMKwMzYnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin',
     },
     {
+      num: 2,
+      isMain: false,
+      name: t.branch2_name || 'शाखा २ — सांगली',
+      addr: t.branch2_addr || 'विष्णूअण्णा फळ मार्केट शेजारी, सांगली',
+      phone: '+918806595075',
+      mapQuery: 'Sangli+Fruit+Market',
+      mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.156891391587!2d74.5768!3d16.8524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDUxJzA4LjYiTiA7NMKwMzQnMzYuNSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin',
+    },
+    {
       num: 3,
+      isMain: false,
       name: t.branch3_name || 'शाखा ३ — जत',
       addr: t.branch3_addr || 'वळसंग रोड, तांगडी मळा, जत',
       phone: '+918806595075',
@@ -59,7 +62,9 @@ export default function Branches() {
                   loading="lazy"
                   title={b.name}
                 ></iframe>
-                <div className="branch-badge">{b.num}</div>
+                <div className={`branch-badge ${b.isMain ? 'branch-badge-main' : ''}`}>
+                  {b.isMain ? (t.main_branch_badge || 'मुख्य शाखा') : b.num}
+                </div>
               </div>
               <div className="branch-info">
                 <h3 className="branch-name">{b.name}</h3>

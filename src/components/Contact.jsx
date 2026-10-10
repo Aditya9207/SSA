@@ -183,8 +183,8 @@ export default function Contact({ onShowToast }) {
                     onChange={handleChange}
                   >
                     <option value="">{t.select_branch || '— शाखा निवडा —'}</option>
+                    <option value={t.opt_b_kumtha || "कुमठा फाटा"}>{t.opt_b_kumtha || "कुमठा फाटा"} ({t.main_branch_label || 'मुख्य शाखा'})</option>
                     <option value={t.opt_b_sangli || "सांगली"}>{t.opt_b_sangli || "सांगली"}</option>
-                    <option value={t.opt_b_kumtha || "कुमठा फाटा"}>{t.opt_b_kumtha || "कुमठा फाटा"}</option>
                     <option value={t.opt_b_jat || "जत"}>{t.opt_b_jat || "जत"}</option>
                   </select>
                 </div>
@@ -290,13 +290,13 @@ export default function Contact({ onShowToast }) {
                 <i className="ph-bold ph-map-pin"></i> {t.ci_branches_title || 'शाखा संपर्क क्रमांक (थेट कॉल)'}
               </div>
               <div className="bco-row">
-                <span className="bco-name">{t.branch1_short || 'सांगली (मुख्य शाखा)'}</span>
+                <span className="bco-name">{t.branch1_short || 'कुमठा फाटा (मुख्य शाखा)'}</span>
                 <a href="tel:+918806595075" className="bco-btn">
                   <i className="ph-bold ph-phone"></i> 8806595075
                 </a>
               </div>
               <div className="bco-row">
-                <span className="bco-name">{t.branch2_short || 'कुमठा फाटा'}</span>
+                <span className="bco-name">{t.branch2_short || 'सांगली'}</span>
                 <a href="tel:+918806595075" className="bco-btn">
                   <i className="ph-bold ph-phone"></i> 8806595075
                 </a>

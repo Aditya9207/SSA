@@ -111,8 +111,8 @@ export default function Navbar() {
 
           {/* Right Controls */}
           <div className="nav-right">
-            {/* Contact pill — white card */}
-            <a href="#contact" className="nav-cta" onClick={(e) => handleNavClick(e, 'contact')}>
+            {/* Contact pill — white card (desktop only) */}
+            <a href="#contact" className="nav-cta desktop-only" onClick={(e) => handleNavClick(e, 'contact')}>
               <i className="ph-bold ph-phone-call"></i>
               {t.nav_contact || 'संपर्क'}
             </a>

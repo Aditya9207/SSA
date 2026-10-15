@@ -85,23 +85,41 @@ const translations = {
     p_swan_rf:           "रिव्हर्स फॉरवर्ड रोटाव्हेटर (Reverse Forward)",
     p_swan_rf_desc:      "16–24 HP | 85 ते 91 सेमी | 18–22 J-टाईप ब्लेड्स | दोनही दिशेने फिरणारा रोटर, खोल व बारीक नांगरट.",
 
-    // Popular Group products
-    p_pop1:      "पलटी नांगर (2 बॉटम)",
-    p_pop1_desc: "25 ते 60 HP | 2 बॉटम हेवी-ड्युटी नांगर | Popular Group दर्जेदार बनावट",
-    p_pop2:      "पलटी नांगर (3 बॉटम)",
-    p_pop2_desc: "35, 45 व 50 HP | 3 बॉटम हाय-क्लियरन्स नांगर | Popular Group",
-    p_pop3:      "डिस्क नांगर",
-    p_pop3_desc: "18 ते 60 HP | हेवी-ड्युटी डिस्क नांगर | कठीण व खडकाळ जमिनीसाठी",
-    p_pop4:      "पलटी नांगर (4 बॉटम)",
-    p_pop4_desc: "45 ते 50 HP | 4 बॉटम मोठ्या ट्रॅक्टरसाठी | अचूक खोल नांगरट",
+    // Popular Group products (17 models from Popular Agri Implements)
+    p_pop_hyd_2f: "हायड्रॉलिक २ बॉटम पलटी नांगर (Hydraulic 2 Furrow)",
+    p_pop_hyd_2f_desc: "35 ते 55 HP | 2 बॉटम हायड्रॉलिक रिव्हर्सिबल | 4 Tynes | 15 इंच रुंदी व खोली | वजन 400 kg | हेवी-ड्युटी बनावट",
+    p_pop_hyd_1f: "हायड्रॉलिक सिंगल बॉटम पलटी नांगर (Hydraulic 1 Furrow)",
+    p_pop_hyd_1f_desc: "50 HP | सिंगल बॉटम (2 Tynes) | 15 इंच रुंदी व 8 इंच खोली | वजन 300 kg | खोल नांगरटीसाठी",
+    p_pop_mech_1f: "मेकॅनिकल सिंगल बॉटम पलटी नांगर (Mechanical 1 Furrow)",
+    p_pop_mech_1f_desc: "25 ते 50 HP | सिंगल रिव्हर्सिबल मेकॅनिकल नांगर | सुलभ हाताळणी व अचूक काम | Popular Group बनावट",
+    p_pop_dunlop: "डनलॉप नांगर (Dunlop Plough)",
+    p_pop_dunlop_desc: "45 HP | 4 Tynes हायड्रॉलिक रिव्हर्सिबल पलटी नांगर | अत्यंत बळकट फ्रेम व दीर्घायुष्य",
+    p_pop_jeet09_boron: "जीत ०९ बोरॉन स्टील डिस्क नांगर (Jeet 09 Boron Steel)",
+    p_pop_jeet09_boron_desc: "45+ HP | ट्रेलिंग टाईप डिस्क हॅरो/नांगर | उच्च दर्जाचे बोरॉन स्टील | वजन 425 kg | खडकाळ जमिनीसाठी",
+    p_pop_two_f_hyd: "हाय-टाईन २ बॉटम हायड्रॉलिक नांगर (Hi-Tine 2 Furrow)",
+    p_pop_two_f_hyd_desc: "50 HP | हाय-टाईन डिझाईन | 25 इंच वर्किंग विड्थ | वजन 400 kg | 2 डिस्क/फरोज | Popular - Bhoomi",
+    p_pop_three_f_hyd: "३ बॉटम हायड्रॉलिक पलटी नांगर (3 Furrow Hydraulic)",
+    p_pop_three_f_hyd_desc: "45 ते 50 HP | 3 बॉटम (6 डिस्क/फरोज) | 30 इंच रुंदी | वजन 400 kg | मोठ्या क्षेत्रासाठी वेगवान नांगरट",
+    p_pop_jeet09_3f: "जीत ०९ - ३ बॉटम नांगर (Jeet 09 3 Furrow)",
+    p_pop_jeet09_3f_desc: "60 HP | 3 बॉटम (6 Tynes) हेवी-ड्युटी डिस्क / M.B. नांगर | उच्च दर्जाचे बोरॉन स्टील मटेरियल",
+    p_pop_jumbo_1f: "मेकॅनिकल सिंगल बॉटम जंबो (Jumbo Heavy Duty)",
+    p_pop_jumbo_1f_desc: "25 ते 50 HP | जंबो हेवी-ड्युटी सिंगल बॉटम नांगर | 20 इंच रुंदी, 8 इंच खोली | वजन 200 kg",
+    p_pop_ridger_surry: "२ व ३ बॉटम सरी रिजर (Two & Three Furrow Ridger)",
+    p_pop_ridger_surry_desc: "25 ते 60 HP | 2 व 3 बॉटम सरी रिजर | ऊस, भाजीपाला व फळबागांसाठी अचूक सरी व वरंबा बनवण्यासाठी",
+    p_pop_boron_1f: "सिंगल बॉटम पलटी नांगर - बोरॉन स्टील (Boron Steel)",
+    p_pop_boron_1f_desc: "45 ते 50 HP | सिंगल सिलेंडर हायड्रॉलिक कंट्रोल | 380 mm खोली | बोरॉन स्टील मटेरियल | 2WD व 4WD ट्रॅक्टर",
+    p_pop_disc_harrow: "रोटरी डिस्क हॅरो (Rotary Disc Harrow)",
+    p_pop_disc_harrow_desc: "45 ते 55 HP | 7 डिस्क्स (66 इंच व्यास) | मजबूत पाईप/बॉक्स फ्रेम पॉवर हॅरो | मातीचे ढेकूळ फोडण्यासाठी",
+    p_pop_two_f_ridger: "२ बॉटम रिजर (Two Furrow Ridger)",
+    p_pop_two_f_ridger_desc: "25 ते 50 HP | २ बॉटम हेवी-ड्युटी रिजर | अचूक सरी पाडण्यासाठी | मजबूत माइल्ड स्टील बनावट",
+    p_pop_mb_plough: "माऊंटेड मोल्ड बोर्ड नांगर (Mounted Mould Board Plough)",
+    p_pop_mb_plough_desc: "35 ते 60 HP | सेमी-डिगिंग टाईप | 1.35 मीटर रुंदी | 200 mm खोली | प्रीमियम बोरॉन स्टील मोल्डबोर्ड",
 
     // Own products
-    p_chaff:         "चाफ कटर",
-    p_chaff_desc:    "दर्जेदार स्वनिर्मित कटर | 2 व 3 HP मोटरसह उपलब्ध | उच्च कटिंग क्षमता व टिकाऊ",
-    p_fan:           "फन / ब्लोअर",
-    p_fan_desc:      "धान्य व भुसा साफ करण्यासाठी | स्वनिर्मित हेवी ड्युटी ब्लोअर | Industrial Grade",
-    p_belt:          "बेल्टिंग टेबल",
-    p_belt_desc:     "Industrial-grade बेल्टिंग टेबल | स्वनिर्मित मजबूत रचना व दीर्घायुष्य",
+    p_chaff:         "चाफ कटर (Chaff Cutter)",
+    p_chaff_desc:    "दर्जेदार स्वनिर्मित कटर | 2 व 3 HP मोटरसह उपलब्ध | उच्च कटिंग क्षमता, हेवी स्टँड व टिकाऊ रचना",
+    p_fan:           "स्वनिर्मित फन (Fun - 5 Tyne)",
+    p_fan_desc:      "स्वनिर्मित हेवी-ड्युटी फन | 5 मजबूत डकफूट टाइन्स | आंतरमशागत, तण नियंत्रण व माती भुसभुशीत करण्यासाठी",
 
     // ── Services ─────────────────────────────────────────────
     services_badge:    "आमच्या सेवा",
@@ -366,22 +384,40 @@ const translations = {
     p_swan_ultra_plus_desc: "30–65 HP | 5 से 8 फीट | 36–60 बोरॉन ब्लेड | अत्यंत कठोर जुताई, भूमि समतलीकरण व खरपतवार नियंत्रण हेतु।",
     p_swan_rf:           "रिवर्स फॉरवर्ड रोटावेटर (Reverse Forward)",
     p_swan_rf_desc:      "16–24 HP | 85 से 91 सेमी | 18–22 J-ब्लेड | दोनों दिशाओं में घूमने वाला रोटर, एक ही चक्कर में गहरी जुताई।",
+    // Popular Group products
+    p_pop_hyd_2f: "हाइड्रोलिक 2 बॉटम पलटी हल (Hydraulic 2 Furrow)",
+    p_pop_hyd_2f_desc: "35 से 55 HP | 2 बॉटम हाइड्रोलिक रिवर्सिबल | 4 Tynes | 15 इंच चौड़ाई व गहराई | वजन 400 kg | मजबूत बनावट",
+    p_pop_hyd_1f: "हाइड्रोलिक सिंगल बॉटम पलटी हल (Hydraulic 1 Furrow)",
+    p_pop_hyd_1f_desc: "50 HP | सिंगल बॉटम (2 Tynes) | 15 इंच चौड़ाई व 8 इंच गहराई | वजन 300 kg | गहरी जुताई हेतु",
+    p_pop_mech_1f: "मैकेनिकल सिंगल बॉटम पलटी हल (Mechanical 1 Furrow)",
+    p_pop_mech_1f_desc: "25 से 50 HP | सिंगल रिवर्सिबल मैकेनिकल हल | आसान संचालन व सटीक जुताई | Popular Group गुणवत्ता",
+    p_pop_dunlop: "डनलप हल (Dunlop Plough)",
+    p_pop_dunlop_desc: "45 HP | 4 Tynes हाइड्रोलिक रिवर्सिबल हल | अत्यंत मजबूत चेसिस फ्रेम व टिकाऊ बनावट",
+    p_pop_jeet09_boron: "जीत 09 बोरॉन स्टील डिस्क हल (Jeet 09 Boron Steel)",
+    p_pop_jeet09_boron_desc: "45+ HP | ट्रेलिंग टाइप डिस्क हैरो/हल | उच्च गुणवत्ता बोरॉन स्टील | वजन 425 kg | पथरीली जमीन हेतु",
+    p_pop_two_f_hyd: "हाई-टाइन 2 बॉटम हाइड्रोलिक हल (Hi-Tine 2 Furrow)",
+    p_pop_two_f_hyd_desc: "50 HP | हाई-टाइन डिजाइन | 25 इंच वर्किंग विड्थ | वजन 400 kg | 2 डिस्क/फरोज | Popular - Bhoomi",
+    p_pop_three_f_hyd: "3 बॉटम हाइड्रोलिक पलटी हल (3 Furrow Hydraulic)",
+    p_pop_three_f_hyd_desc: "45 से 50 HP | 3 बॉटम (6 डिस्क/फरोज) | 30 इंच चौड़ाई | वजन 400 kg | बड़े खेतों में तीव्र जुताई",
+    p_pop_jeet09_3f: "जीत 09 - 3 बॉटम हल (Jeet 09 3 Furrow)",
+    p_pop_jeet09_3f_desc: "60 HP | 3 बॉटम (6 Tynes) हेवी-ड्यूटी डिस्क / M.B. हल | उच्च श्रेणी बोरॉन स्टील बनावट",
+    p_pop_jumbo_1f: "मैकेनिकल सिंगल बॉटम जंबो (Jumbo Heavy Duty)",
+    p_pop_jumbo_1f_desc: "25 से 50 HP | जंबो हेवी-ड्यूटी सिंगल बॉटम हल | 20 इंच चौड़ाई, 8 इंच गहराई | वजन 200 kg",
+    p_pop_ridger_surry: "2 व 3 बॉटम मेड़ रिजर (Two & Three Furrow Ridger)",
+    p_pop_ridger_surry_desc: "25 से 60 HP | 2 व 3 बॉटम मेड़ रिजर | गन्ना, सब्जी व बागवानी हेतु सटीक नाली व मेड़ निर्माण",
+    p_pop_boron_1f: "सिंगल बॉटम पलटी हल - बोरॉन स्टील (Boron Steel)",
+    p_pop_boron_1f_desc: "45 से 50 HP | सिंगल सिलेंडर हाइड्रोलिक कंट्रोल | 380 mm गहराई | बोरॉन स्टील संरचना | 2WD व 4WD ट्रैक्टर",
+    p_pop_disc_harrow: "रोटरी डिस्क हैरो (Rotary Disc Harrow)",
+    p_pop_disc_harrow_desc: "45 से 55 HP | 7 डिस्क (66 इंच व्यास) | मजबूत पाइप/बॉक्स फ्रेम पावर हैरो | मिट्टी ढेले बारीक करने हेतु",
+    p_pop_two_f_ridger: "2 बॉटम रिजर (Two Furrow Ridger)",
+    p_pop_two_f_ridger_desc: "25 से 50 HP | 2 बॉटम हेवी-ड्यूटी रिजर | सटीक मेड़/नाली बनाने हेतु | मजबूत माइल्ड स्टील संरचना",
+    p_pop_mb_plough: "माउंटेड मोल्ड बोर्ड हल (Mounted Mould Board Plough)",
+    p_pop_mb_plough_desc: "35 से 60 HP | सेमी-डिगिंग टाइप | 1.35 मीटर चौड़ाई | 200 mm गहराई | प्रीमियम बोरॉन स्टील मोल्डबोर्ड",
 
-    p_pop1:      "पलटी हल (2 बॉटम)",
-    p_pop1_desc: "25 से 60 HP | 2 बॉटम हेवी-ड्यूटी हल | Popular Group उच्च गुणवत्ता",
-    p_pop2:      "पलटी हल (3 बॉटम)",
-    p_pop2_desc: "35, 45 व 50 HP | 3 बॉटम हाई-क्लियरेंस हल | Popular Group",
-    p_pop3:      "डिस्क हल",
-    p_pop3_desc: "18 से 60 HP | हेवी-ड्यूटी डिस्क हल | कठोर व पथरीली जमीन हेतु",
-    p_pop4:      "पलटी हल (4 बॉटम)",
-    p_pop4_desc: "45 से 50 HP | 4 बॉटम बड़े ट्रैक्टरों हेतु | गहरी जुताई के लिए",
-
-    p_chaff:         "चाफ कटर",
-    p_chaff_desc:    "स्वनिर्मित उच्च गुणवत्ता | 2 व 3 HP मोटर सहित | उच्च क्षमता व टिकाऊ",
-    p_fan:           "फैन / ब्लोअर",
-    p_fan_desc:      "अनाज व भूसा सफाई हेतु | स्वनिर्मित हेवी ड्यूटी ब्लोअर | Industrial Grade",
-    p_belt:          "बेल्टिंग टेबल",
-    p_belt_desc:     "Industrial-grade बेल्टिंग टेबल | स्वनिर्मित मजबूत संरचना",
+    p_chaff:         "चाफ कटर (Chaff Cutter)",
+    p_chaff_desc:    "स्वनिर्मित उच्च गुणवत्ता कटर | 2 व 3 HP मोटर सहित | उच्च क्षमता, मजबूत स्टैंड व टिकाऊ संरचना",
+    p_fan:           "स्वनिर्मित फन (Fun - 5 Tyne)",
+    p_fan_desc:      "स्वनिर्मित हेवी-ड्यूटी फन | 5 मजबूत डकफुट टाइन्स | खेत की गुड़ाई, खरपतवार नियंत्रण व मिट्टी भुरभुरी करने हेतु",
 
     services_badge:    "हमारी सेवाएं",
     services_title:    "एक छत के नीचे पूरी सेवा",
@@ -638,22 +674,40 @@ const translations = {
     p_swan_ultra_plus_desc: "30-65 HP | 5' to 8' Size | 36-60 Boron Blades | Extra heavy & robust for seedbed prep & land leveling.",
     p_swan_rf:           "Reverse Forward Rotary Tiller",
     p_swan_rf_desc:      "16-24 HP | 85cm to 91cm | 18-22 J-Type Blades | Dual-direction rotor for deep tillage & fine pulverization.",
+    // Popular Group products
+    p_pop_hyd_2f: "Hydraulic Two Furrow Reversible Plough",
+    p_pop_hyd_2f_desc: "35 to 55 HP | 2 Bottom Hydraulic Reversible | 4 Tynes | 15 Inch Width & Depth | 400 kg Weight | Heavy-Duty Mild Steel",
+    p_pop_hyd_1f: "Hydraulic Single Furrow Plough",
+    p_pop_hyd_1f_desc: "50 HP | 1 Bottom (2 Tynes) | 15 Inch Width & 8 Inch Working Depth | 300 kg Weight | Deep Tillage Specialist",
+    p_pop_mech_1f: "Mechanical Single Furrow Reversible Plough",
+    p_pop_mech_1f_desc: "25 to 50 HP | Single Reversible Mechanical Plough | Precision Turning & Easy Maintenance",
+    p_pop_dunlop: "Dunlop Plough",
+    p_pop_dunlop_desc: "45 HP | 4 Tynes Hydraulic Reversible Plough | Heavy-Duty Reinforced Frame Design",
+    p_pop_jeet09_boron: "Jeet 09 (Boron Steel) Disc Implement",
+    p_pop_jeet09_boron_desc: "45+ HP | Trailed Type Disc Harrow / Plough | Premium Boron Steel | 425 kg Weight | Tough Soil Specialist",
+    p_pop_two_f_hyd: "Two Furrow Hydraulic Reversible Plough (Hi-Tine)",
+    p_pop_two_f_hyd_desc: "50 HP | Hi-Tine Design | 25 Inch Working Width | 400 kg Weight | 2 Bottom Hydraulic | Popular - Bhoomi",
+    p_pop_three_f_hyd: "Three Furrow Hydraulic Reversible Plough",
+    p_pop_three_f_hyd_desc: "45 to 50 HP | 3 Bottom (6 Disc/Furrow) | 30 Inch Working Width | 400 kg Weight | High Productivity Plough",
+    p_pop_jeet09_3f: "Jeet 09 3 Furrow Plough",
+    p_pop_jeet09_3f_desc: "60 HP | 3 Furrow (6 Tynes) Heavy-Duty Disc / M.B. Plough | High Tensile Boron Steel",
+    p_pop_jumbo_1f: "Mechanical Single Furrow Plough (Jumbo Heavy Duty)",
+    p_pop_jumbo_1f_desc: "25 to 50 HP | Jumbo Heavy Duty Single Furrow | 20 Inch Width & 8 Inch Depth | 200 kg Weight",
+    p_pop_ridger_surry: "Two & Three Furrow Surry Ridger",
+    p_pop_ridger_surry_desc: "25 to 60 HP | 2 & 3 Furrow Ridger | Ideal for Sugarcane, Vegetables & Orchard Bedding",
+    p_pop_boron_1f: "Single Furrow Reversible Plough (Boron Steel)",
+    p_pop_boron_1f_desc: "45 to 50 HP | Single Cylinder Hydraulic Control | 380 mm Depth | Premium Boron Steel | 2WD & 4WD",
+    p_pop_disc_harrow: "Rotary Disc Harrow",
+    p_pop_disc_harrow_desc: "45 to 55 HP | 7 Discs (66 Inch Dia) | Heavy-Duty Pipe/Box Frame Power Harrow | Clod Breaking Specialist",
+    p_pop_two_f_ridger: "Two Furrow Ridger",
+    p_pop_two_f_ridger_desc: "25 to 50 HP | 2 Bottom Heavy-Duty Ridger | Accurate Furrowing & Bed Making | Mild Steel Build",
+    p_pop_mb_plough: "Mounted Mould Board Plough",
+    p_pop_mb_plough_desc: "35 to 60 HP | Semi-Digging Mouldboard | 1.35m Working Width | 200 mm Depth | Premium Boron Steel",
 
-    p_pop1:      "Moldboard Plough (2 bottom)",
-    p_pop1_desc: "25 to 60 HP | 2 Bottom Heavy-Duty Plough | Popular Group engineered durability",
-    p_pop2:      "Moldboard Plough (3 bottom)",
-    p_pop2_desc: "35, 45 & 50 HP | 3 Bottom High-Clearance Plough | Popular Group quality",
-    p_pop3:      "Disc Plough",
-    p_pop3_desc: "18 to 60 HP | Heavy-Duty Disc Plough | Designed for tough and stony soils",
-    p_pop4:      "Moldboard Plough (4 bottom)",
-    p_pop4_desc: "45 to 50 HP | 4 Bottom High-Capacity Plough | Deep furrow cultivation",
-
-    p_chaff:         "Chaff Cutter",
-    p_chaff_desc:    "Self-manufactured premium cutter | 2 & 3 HP motor options | High capacity & durable",
-    p_fan:           "Fan / Blower",
-    p_fan_desc:      "Grain & chaff cleaner blower | In-house heavy-duty make | Industrial Grade",
-    p_belt:          "Belting Table",
-    p_belt_desc:     "Industrial-grade Belting Table | Heavy-duty in-house fabricated construction",
+    p_chaff:         "Self-Manufactured Chaff Cutter",
+    p_chaff_desc:    "Self-manufactured premium fodder cutter | 2 & 3 HP motor options | Heavy-duty steel stand & durable build",
+    p_fan:           "Self-Manufactured Fun (5-Tyne Cultivator)",
+    p_fan_desc:      "In-house heavy-duty Fun implement | 5 reinforced duckfoot tynes | Ideal for inter-cultivation & soil aeration",
 
     services_badge:    "Our Services",
     services_title:    "Complete Services Under One Roof",
@@ -848,16 +902,81 @@ export const productData = {
     { key: "p_swan_ultra_plus", img: "/images/swan/ultra_plus_series.png", icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>` },
     { key: "p_swan_rf",         img: "/images/swan/reverse_forward.png",   icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>` },
   ],
-  popular: [
-    { key: "p_pop1", img: "/images/plough.jpg", icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>` },
-    { key: "p_pop2", img: "/images/plough.jpg", icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>` },
-    { key: "p_pop3", img: "/images/plough.jpg", icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>` },
-    { key: "p_pop4", img: "/images/plough.jpg", icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>` },
+    popular: [
+    {
+      key: "p_pop_hyd_2f",
+      img: "/images/popular/hydraulic_two_furrow_reversible_plough.jpg",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`
+    },
+    {
+      key: "p_pop_hyd_1f",
+      img: "/images/popular/hydraulic_single_furrow_plough.jpg",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>`
+    },
+    {
+      key: "p_pop_mech_1f",
+      img: "/images/popular/mechanical_single_furrow_reversible_plough.jpg",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
+    },
+    {
+      key: "p_pop_dunlop",
+      img: "/images/popular/dunlop_plough.jpg",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`
+    },
+    {
+      key: "p_pop_jeet09_boron",
+      img: "/images/popular/jeet_09_boron_steel.jpg",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/></svg>`
+    },
+    {
+      key: "p_pop_two_f_hyd",
+      img: "/images/popular/two_furrow_hydraulic_reversible_plough.jpg",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`
+    },
+    {
+      key: "p_pop_three_f_hyd",
+      img: "/images/popular/three_furrow_hydraulic_reversible_plough.jpg",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`
+    },
+    {
+      key: "p_pop_jeet09_3f",
+      img: "/images/popular/jeet_09_3_furrow_plough.jpg",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><circle cx="12" cy="12" r="3"/><path d="M3 12h18M12 3v18"/></svg>`
+    },
+    {
+      key: "p_pop_jumbo_1f",
+      img: "/images/popular/mechanical_single_furrow_plough_jumbo_heavy_duty.jpg",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`
+    },
+    {
+      key: "p_pop_ridger_surry",
+      img: "/images/popular/two_andthree_furrow_surry_ridger.jpg",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><path d="M3 17l6-6 4 4 8-8"/></svg>`
+    },
+    {
+      key: "p_pop_boron_1f",
+      img: "/images/popular/single_furrow_plough_boron_steel.png",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
+    },
+    {
+      key: "p_pop_disc_harrow",
+      img: "/images/popular/rotary_disck_harrow.jpg",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M4.93 4.93 9.17 9.17M14.83 14.83l4.24 4.24"/></svg>`
+    },
+    {
+      key: "p_pop_two_f_ridger",
+      img: "/images/popular/two_furrow_ridger.jpg",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><path d="M3 17l6-6 4 4 8-8"/></svg>`
+    },
+    {
+      key: "p_pop_mb_plough",
+      img: "/images/popular/mounted_mould_board_plough.jpg",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`
+    },
   ],
   own: [
     { key: "p_chaff", img: "/images/chaff_cutter.jpg", icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>` },
-    { key: "p_fan",   img: "/images/chaff_cutter.jpg", icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>` },
-    { key: "p_belt",  img: "/images/chaff_cutter.jpg", icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><rect x="2" y="7" width="20" height="10" rx="2"/><line x1="6" y1="12" x2="18" y2="12"/></svg>` },
+    { key: "p_fan",   img: "/images/fun.jpg", icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2.2"><path d="M12 2v6m-7 4h14M7 12v6l-2 2m5-8v7l-1 2m6-9v7l1 2m3-8v6l2 2"/></svg>` },
   ]
 };
 

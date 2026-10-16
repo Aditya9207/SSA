@@ -33,21 +33,43 @@ export default function Footer() {
             </p>
             <div className="footer-socials">
               <a
+                href="https://www.facebook.com/share/1DTzhZwAsV/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social"
+                title="Facebook"
+                aria-label="Facebook"
+              >
+                <i className="ph-bold ph-facebook-logo"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/shriswamisamarthagency_?psln=MWViNG94cnB2cHVkcw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social"
+                title="Instagram"
+                aria-label="Instagram"
+              >
+                <i className="ph-bold ph-instagram-logo"></i>
+              </a>
+              <a
                 href="https://wa.me/918806595075"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-social"
                 title="WhatsApp"
+                aria-label="WhatsApp"
               >
                 <i className="ph-bold ph-whatsapp-logo"></i>
               </a>
-              <a href="tel:+918806595075" className="footer-social" title="Call">
+              <a href="tel:+918806595075" className="footer-social" title="Call" aria-label="Call">
                 <i className="ph-bold ph-phone"></i>
               </a>
               <a
                 href="#branches"
                 className="footer-social"
                 title="Branches"
+                aria-label="Branches"
                 onClick={(e) => handleScroll(e, 'branches')}
               >
                 <i className="ph-bold ph-map-pin"></i>
@@ -97,7 +119,7 @@ export default function Footer() {
                 {t.opt_chaff || 'चाफ कटर (स्वनिर्मित)'}
               </a>
               <a href="#products" onClick={(e) => handleScroll(e, 'products')}>
-                {t.opt_fan || 'फन / ब्लोअर'}
+                {t.opt_fan || 'फन'}
               </a>
               <a href="#exchange" onClick={(e) => handleScroll(e, 'exchange')}>
                 {t.opt_exchange || 'रोटर एक्सचेंज'}

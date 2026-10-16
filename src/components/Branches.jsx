@@ -13,7 +13,7 @@ export default function Branches() {
       name: t.branch1_name || 'मुख्य शाखा — कुमठा फाटा',
       addr: t.branch1_addr || 'सिद्धेश्वर मंगल कार्यालयाशेजारी, कुमठा फाटा',
       phone: '+918806595075',
-      mapQuery: 'Kumtha+Fata',
+      mapUrl: 'https://maps.app.goo.gl/kpep5QQTy6AgKNCT8?g_st=ac',
       mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.0!2d74.6!3d16.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDUxJzAwLjAiTiA7NMKwMzYnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin',
     },
     {
@@ -22,7 +22,7 @@ export default function Branches() {
       name: t.branch2_name || 'शाखा २ — सांगली',
       addr: t.branch2_addr || 'विष्णूअण्णा फळ मार्केट शेजारी, सांगली',
       phone: '+918806595075',
-      mapQuery: 'Sangli+Fruit+Market',
+      mapUrl: 'https://maps.app.goo.gl/sjb5yRB5T2zyrK5V9',
       mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.156891391587!2d74.5768!3d16.8524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDUxJzA4LjYiTiA7NMKwMzQnMzYuNSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin',
     },
     {
@@ -31,7 +31,7 @@ export default function Branches() {
       name: t.branch3_name || 'शाखा ३ — जत',
       addr: t.branch3_addr || 'वळसंग रोड, तांगडी मळा, जत',
       phone: '+918806595075',
-      mapQuery: 'Jat+Valsang+Road',
+      mapUrl: 'https://maps.app.goo.gl/r6N9UVf7Xzs954ni6?g_st=ac',
       mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.0!2d75.1!3d16.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDQ4JzAwLjAiTiA7NMKwMDYnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin',
     },
   ];
@@ -70,7 +70,7 @@ export default function Branches() {
                 <h3 className="branch-name">{b.name}</h3>
                 <p className="branch-addr">{b.addr}</p>
                 <div className="branch-actions">
-                  <a href={`tel:${b.phone}`} className="branch-btn btn-call">
+                  <a href={`tel:${b.phone}`} className="branch-btn btn-call" suppressHydrationWarning>
                     <i className="ph-bold ph-phone"></i> {t.branch_call || 'Call'}
                   </a>
                   <a
@@ -78,14 +78,16 @@ export default function Branches() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="branch-btn btn-wa"
+                    suppressHydrationWarning
                   >
                     <i className="ph-bold ph-whatsapp-logo"></i> {t.branch_whatsapp || 'WhatsApp'}
                   </a>
                   <a
-                    href={`https://maps.google.com/?q=${b.mapQuery}`}
+                    href={b.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="branch-btn btn-map"
+                    suppressHydrationWarning
                   >
                     <i className="ph-bold ph-navigation-arrow"></i> {t.branch_map || 'Map'}
                   </a>

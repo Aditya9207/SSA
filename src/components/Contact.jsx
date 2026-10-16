@@ -167,7 +167,7 @@ export default function Contact({ onShowToast }) {
                     <option value={t.opt_swan_plough || "Swan Agro नांगर / मल्चर"}>{t.opt_swan_plough || "Swan Agro नांगर / मल्चर"}</option>
                     <option value={t.opt_popular || "Popular Group नांगर"}>{t.opt_popular || "Popular Group नांगर"}</option>
                     <option value={t.opt_chaff || "चाफ कटर (स्वनिर्मित)"}>{t.opt_chaff || "चाफ कटर (स्वनिर्मित)"}</option>
-                    <option value={t.opt_fan || "फन / ब्लोअर"}>{t.opt_fan || "फन / ब्लोअर"}</option>
+                    <option value={t.opt_fan || "फन"}>{t.opt_fan || "फन"}</option>
                     <option value={t.opt_exchange || "रोटर एक्सचेंज"}>{t.opt_exchange || "रोटर एक्सचेंज"}</option>
                     <option value={t.opt_repair || "दुरुस्ती व स्पेअर पार्ट्स"}>{t.opt_repair || "दुरुस्ती व स्पेअर पार्ट्स"}</option>
                     <option value={t.opt_subsidy || "सबसिडी व फायनान्स"}>{t.opt_subsidy || "सबसिडी व फायनान्स"}</option>
@@ -305,6 +305,34 @@ export default function Contact({ onShowToast }) {
                 <span className="bco-name">{t.branch3_short || 'जत'}</span>
                 <a href="tel:+918806595075" className="bco-btn">
                   <i className="ph-bold ph-phone"></i> 8806595075
+                </a>
+              </div>
+            </div>
+
+            {/* Social Follow */}
+            <div style={{ marginTop: '16px', paddingTop: '14px', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+              <div className="ci-label" style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <i className="ph-bold ph-share-network" style={{ color: 'var(--lime)' }}></i>
+                {t.social_follow_label || 'सोशल मीडियावर फॉलो करा'}
+              </div>
+              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                <a
+                  href="https://www.facebook.com/share/1DTzhZwAsV/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bco-btn"
+                  style={{ padding: '6px 14px', fontSize: '13px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                >
+                  <i className="ph-bold ph-facebook-logo" style={{ fontSize: '16px' }}></i> Facebook
+                </a>
+                <a
+                  href="https://www.instagram.com/shriswamisamarthagency_?psln=MWViNG94cnB2cHVkcw=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bco-btn"
+                  style={{ padding: '6px 14px', fontSize: '13px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                >
+                  <i className="ph-bold ph-instagram-logo" style={{ fontSize: '16px' }}></i> Instagram
                 </a>
               </div>
             </div>

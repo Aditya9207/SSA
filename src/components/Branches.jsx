@@ -14,7 +14,7 @@ export default function Branches() {
       addr: t.branch1_addr || 'सिद्धेश्वर मंगल कार्यालयाशेजारी, कुमठा फाटा',
       phone: '+918806595075',
       mapUrl: 'https://maps.app.goo.gl/kpep5QQTy6AgKNCT8?g_st=ac',
-      mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.0!2d74.6!3d16.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDUxJzAwLjAiTiA7NMKwMzYnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin',
+      mapEmbed: 'https://maps.google.com/maps?q=Siddheshwar+Mangal+Karyalaya+Kumtha+Fata+Sangli+Maharashtra&t=&z=15&ie=UTF8&iwloc=&output=embed',
     },
     {
       num: 2,
@@ -23,7 +23,7 @@ export default function Branches() {
       addr: t.branch2_addr || 'विष्णूअण्णा फळ मार्केट शेजारी, सांगली',
       phone: '+918806595075',
       mapUrl: 'https://maps.app.goo.gl/sjb5yRB5T2zyrK5V9',
-      mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.156891391587!2d74.5768!3d16.8524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDUxJzA4LjYiTiA7NMKwMzQnMzYuNSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin',
+      mapEmbed: 'https://maps.google.com/maps?q=Vishnuanna+Fruit+Market+Sangli+Maharashtra&t=&z=15&ie=UTF8&iwloc=&output=embed',
     },
     {
       num: 3,
@@ -32,9 +32,15 @@ export default function Branches() {
       addr: t.branch3_addr || 'वळसंग रोड, तांगडी मळा, जत',
       phone: '+918806595075',
       mapUrl: 'https://maps.app.goo.gl/r6N9UVf7Xzs954ni6?g_st=ac',
-      mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.0!2d75.1!3d16.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDQ4JzAwLjAiTiA7NMKwMDYnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin',
+      mapEmbed: 'https://maps.google.com/maps?q=Valsang+Road+Tangadi+Mala+Jat+Sangli+Maharashtra&t=&z=15&ie=UTF8&iwloc=&output=embed',
     },
   ];
+
+  const getWhatsAppUrl = (branch) => {
+    const cleanPhone = branch.phone.replace(/[^0-9]/g, '');
+    const message = t.branch_wa_msg || 'नमस्कार! मला श्री स्वामी समर्थ एजन्सीबद्दल अधिक माहिती हवी आहे.';
+    return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
+  };
 
   return (
     <section id="branches" className="section-v">
@@ -62,25 +68,22 @@ export default function Branches() {
                   loading="lazy"
                   title={b.name}
                 ></iframe>
-                <div className={`branch-badge ${b.isMain ? 'branch-badge-main' : ''}`}>
-                  {b.isMain ? (t.main_branch_badge || 'मुख्य शाखा') : b.num}
-                </div>
               </div>
               <div className="branch-info">
                 <h3 className="branch-name">{b.name}</h3>
                 <p className="branch-addr">{b.addr}</p>
                 <div className="branch-actions">
                   <a href={`tel:${b.phone}`} className="branch-btn btn-call" suppressHydrationWarning>
-                    <i className="ph-bold ph-phone"></i> {t.branch_call || 'Call'}
+                    <i className="ph-bold ph-phone"></i> <span>{t.branch_call || 'Call'}</span>
                   </a>
                   <a
-                    href={`https://wa.me/${b.phone.replace(/[^0-9]/g, '')}`}
+                    href={getWhatsAppUrl(b)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="branch-btn btn-wa"
                     suppressHydrationWarning
                   >
-                    <i className="ph-bold ph-whatsapp-logo"></i> {t.branch_whatsapp || 'WhatsApp'}
+                    <i className="ph-bold ph-whatsapp-logo"></i> <span>{t.branch_whatsapp || 'WhatsApp'}</span>
                   </a>
                   <a
                     href={b.mapUrl}
@@ -89,7 +92,7 @@ export default function Branches() {
                     className="branch-btn btn-map"
                     suppressHydrationWarning
                   >
-                    <i className="ph-bold ph-navigation-arrow"></i> {t.branch_map || 'Map'}
+                    <i className="ph-bold ph-navigation-arrow"></i> <span>{t.branch_map || 'Map'}</span>
                   </a>
                 </div>
               </div>

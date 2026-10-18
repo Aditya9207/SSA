@@ -55,7 +55,7 @@ export default function Hero() {
                 }}
               >
                 <i className="ph-bold ph-arrow-up-right" style={{ fontSize: '1.1rem' }}></i>
-                {t.hero_cta1 || 'आजच संपर्क साधा'}
+                <span>{t.hero_cta1 || 'आजच संपर्क साधा'}</span>
               </a>
               <a
                 href="#products"
@@ -66,7 +66,7 @@ export default function Hero() {
                 }}
               >
                 <i className="ph-bold ph-tractor" style={{ fontSize: '1.1rem' }}></i>
-                {t.hero_cta2 || 'उत्पादने पाहा'}
+                <span>{t.hero_cta2 || 'उत्पादने पाहा'}</span>
               </a>
             </div>
 

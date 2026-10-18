@@ -27,6 +27,26 @@ export default function Home() {
 
   const [toast, setToast] = useState(null);
 
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const scrollToHash = () => {
+        if (window.location.hash) {
+          const id = window.location.hash.replace('#', '');
+          const el = document.getElementById(id);
+          if (el) {
+            setTimeout(() => {
+              el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 180);
+          }
+        }
+      };
+
+      scrollToHash();
+      window.addEventListener('hashchange', scrollToHash);
+      return () => window.removeEventListener('hashchange', scrollToHash);
+    }
+  }, []);
+
   const showToast = useCallback((message, type = 'success') => {
     setToast({ message, type });
     setTimeout(() => {

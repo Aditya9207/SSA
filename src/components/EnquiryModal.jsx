@@ -110,14 +110,18 @@ export default function EnquiryModal({ isOpen, productName, onClose, onShowToast
           >
             {isSubmitting ? (
               <>
-                <i className="ph-bold ph-spinner spin-anim"></i> {lang === 'en' ? 'Submitting...' : lang === 'hi' ? 'दर्ज हो रहा है...' : 'नोंदवत आहे...'}
+                <i className="ph-bold ph-spinner spin-anim"></i> <span>{lang === 'en' ? 'Submitting...' : lang === 'hi' ? 'दर्ज हो रहा है...' : 'नोंदवत आहे...'}</span>
               </>
             ) : (
               <>
-                <i className="ph-bold ph-whatsapp-logo"></i> {t.modal_wa_btn || 'व्हॉट्सअपवर संपर्क साधा'}
+                <i className="ph-bold ph-whatsapp-logo"></i> <span>{t.modal_wa_btn || 'व्हॉट्सअपवर संपर्क साधा'}</span>
               </>
             )}
           </button>
+          <p style={{ fontSize: '0.8rem', color: 'var(--text-muted, #666)', textAlign: 'center', marginTop: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+            <i className="ph-bold ph-shield-check" style={{ color: '#2d6a4f', fontSize: '1rem' }}></i>
+            <span>{lang === 'en' ? 'Your phone number is strictly confidential. No spam.' : lang === 'hi' ? 'आपकी जानकारी पूरी तरह सुरक्षित है।' : 'तुमची संपर्क माहिती १००% सुरक्षित व गोपनीय राहील.'}</span>
+          </p>
         </form>
       </div>
     </div>

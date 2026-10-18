@@ -50,6 +50,7 @@ export function LanguageProvider({ children }) {
 
   const setLang = (newLang) => {
     setLangState(newLang);
+    applyLanguageMeta(newLang);
     try {
       localStorage.setItem('ssa_lang', newLang);
     } catch {

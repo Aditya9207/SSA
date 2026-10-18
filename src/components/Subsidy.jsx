@@ -65,7 +65,7 @@ export default function Subsidy() {
 
           <div className="finance-card visible delay-2">
             <div className="finance-card-badge">
-              <i className="ph-bold ph-bank"></i> {t.finance_card_badge || 'सुलभ EMI सुविधा'}
+              <i className="ph-bold ph-bank"></i> <span>{t.finance_card_badge || 'सुलभ EMI सुविधा'}</span>
             </div>
             <h3 className="finance-title">{t.finance_title || 'सोपे फायनान्स पर्याय'}</h3>
             <blockquote className="finance-quote">
@@ -73,21 +73,21 @@ export default function Subsidy() {
             </blockquote>
             <div className="finance-badges">
               <div className="fin-badge fin-badge-highlight">
-                <i className="ph-bold ph-seal-check"></i> {t.fin_partner || 'TVS Finance'}
+                <i className="ph-bold ph-seal-check"></i> <span>{t.fin_partner || 'TVS Finance'}</span>
               </div>
               <div className="fin-badge">
-                <i className="ph-bold ph-percent"></i> {t.fin_badge1 || 'कमी व्याजदर'}
+                <i className="ph-bold ph-percent"></i> <span>{t.fin_badge1 || 'कमी व्याजदर'}</span>
               </div>
               <div className="fin-badge">
-                <i className="ph-bold ph-calendar-check"></i> {t.fin_badge2 || 'सुलभ मासिक हप्ते'}
+                <i className="ph-bold ph-calendar-check"></i> <span>{t.fin_badge2 || 'सुलभ मासिक हप्ते'}</span>
               </div>
               <div className="fin-badge">
-                <i className="ph-bold ph-lightning"></i> {t.fin_badge3 || 'त्वरित मंजुरी'}
+                <i className="ph-bold ph-lightning"></i> <span>{t.fin_badge3 || 'त्वरित मंजुरी'}</span>
               </div>
             </div>
             <div className="finance-card-action">
               <a href="#contact" className="btn btn-amber btn-md" onClick={handleContactClick}>
-                <i className="ph-bold ph-chat-circle-dots"></i> {t.finance_cta || 'फायनान्स चौकशी करा'}
+                <i className="ph-bold ph-chat-circle-dots"></i> <span>{t.finance_cta || 'फायनान्स चौकशी करा'}</span>
               </a>
             </div>
           </div>

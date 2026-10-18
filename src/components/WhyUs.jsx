@@ -49,9 +49,6 @@ export default function WhyUs() {
                   </>
               }
             </h2>
-            <p className="whyus-intro-text">
-              {t.whyus_intro || 'सन २०११ पासून हजारो शेतकऱ्यांच्या विश्वासाचे केंद्र — उत्तम दर्जाची कृषी अवजारे, अस्सल सुटे भाग आणि तत्पर शेती सेवा.'}
-            </p>
           </div>
         </div>
 

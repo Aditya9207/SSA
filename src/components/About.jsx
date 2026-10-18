@@ -83,7 +83,7 @@ export default function About() {
         <div className="about-layout">
           <div className="about-text-col reveal visible">
             <div className="pill-label">{t.about_badge || 'आमच्याबद्दल'}</div>
-            <h2 className="section-heading" style={{ marginBottom: '24px' }}>
+            <h2 className="section-heading" style={{ marginBottom: '16px' }}>
               <span>{t.about_title ? t.about_title.split(' ').slice(0, 2).join(' ') : 'शेतकऱ्यांसाठी'}</span>{' '}
               <span className="heading-accent">{t.about_title ? t.about_title.split(' ').slice(2).join(' ') : 'विश्वासाचे नाव'}</span>
             </h2>

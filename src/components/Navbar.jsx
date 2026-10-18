@@ -1,9 +1,14 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHome = pathname === '/';
+
   const { lang, setLang, t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -25,19 +30,21 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 60);
 
-      // Active section detection
-      const sections = ['hero','about','products','services','why-us','branches','contact'];
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i]);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActiveSection(sections[i]);
-          break;
+      // Active section detection (only on home)
+      if (isHome) {
+        const sections = ['hero','about','products','services','why-us','branches','contact'];
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const el = document.getElementById(sections[i]);
+          if (el && window.scrollY >= el.offsetTop - 120) {
+            setActiveSection(sections[i]);
+            break;
+          }
         }
       }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHome]);
 
   const closeMenu = () => {
     setMobileMenuOpen(false);
@@ -51,11 +58,18 @@ export default function Navbar() {
   };
 
   const handleNavClick = (e, targetId) => {
-    e.preventDefault();
     closeMenu();
-    const el = document.getElementById(targetId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    if (isHome) {
+      e.preventDefault();
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      e.preventDefault();
+      const targetUrl = targetId === 'hero' ? '/' : `/#${targetId}`;
+      router.push(targetUrl);
     }
   };
 
@@ -74,7 +88,7 @@ export default function Navbar() {
         <div className="nav-inner">
           {/* Logo */}
           <a
-            href="#hero"
+            href="/"
             className="nav-logo"
             onClick={(e) => handleNavClick(e, 'hero')}
           >
@@ -99,8 +113,8 @@ export default function Navbar() {
             {navItems.map((item) => (
               <li key={item.id}>
                 <a
-                  href={`#${item.id}`}
-                  className={activeSection === item.id ? 'nav-active' : ''}
+                  href={isHome ? `#${item.id}` : `/#${item.id}`}
+                  className={isHome && activeSection === item.id ? 'nav-active' : ''}
                   onClick={(e) => handleNavClick(e, item.id)}
                 >
                   {item.label}
@@ -112,9 +126,13 @@ export default function Navbar() {
           {/* Right Controls */}
           <div className="nav-right">
             {/* Contact pill — white card (desktop only) */}
-            <a href="#contact" className="nav-cta desktop-only" onClick={(e) => handleNavClick(e, 'contact')}>
+            <a
+              href={isHome ? '#contact' : '/#contact'}
+              className="nav-cta desktop-only"
+              onClick={(e) => handleNavClick(e, 'contact')}
+            >
               <i className="ph-bold ph-phone-call"></i>
-              {t.nav_contact || 'संपर्क'}
+              <span>{t.nav_contact || 'संपर्क'}</span>
             </a>
 
             {/* Language Globe Dropdown */}
@@ -190,11 +208,18 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div className={`nav-mobile-menu ${mobileMenuOpen ? 'open' : ''}`} id="mobile-menu">
         {navItems.map((item) => (
-          <a key={item.id} href={`#${item.id}`} onClick={(e) => handleNavClick(e, item.id)}>
+          <a
+            key={item.id}
+            href={isHome ? `#${item.id}` : `/#${item.id}`}
+            onClick={(e) => handleNavClick(e, item.id)}
+          >
             <span>{item.label}</span>
           </a>
         ))}
-        <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>
+        <a
+          href={isHome ? '#contact' : '/#contact'}
+          onClick={(e) => handleNavClick(e, 'contact')}
+        >
           <i className="ph-bold ph-phone"></i>
           <span>{t.nav_contact}</span>
         </a>

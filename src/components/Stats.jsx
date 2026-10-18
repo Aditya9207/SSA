@@ -4,50 +4,48 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 function AnimatedNumber({ target, suffix = '', duration = 1800 }) {
-  const [count, setCount] = useState(0);
-  const [started, setStarted] = useState(false);
+  // Initialize with target so SSR / raw HTML contains real numbers for search crawlers
+  const [count, setCount] = useState(target);
   const ref = useRef(null);
+  const animatedRef = useRef(false);
 
   useEffect(() => {
+    if (animatedRef.current) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !started) {
-          setStarted(true);
+        if (entry.isIntersecting && !animatedRef.current) {
+          animatedRef.current = true;
           observer.disconnect();
+
+          const steps = 50;
+          const stepDuration = duration / steps;
+          const increment = target / steps;
+          let current = 0;
+          setCount(0);
+
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              setCount(target);
+              clearInterval(timer);
+            } else {
+              setCount(Math.floor(current));
+            }
+          }, stepDuration);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (ref.current) {
       observer.observe(ref.current);
     }
     return () => observer.disconnect();
-  }, [started]);
-
-  useEffect(() => {
-    if (!started) return;
-
-    const steps = 60;
-    const stepDuration = duration / steps;
-    const increment = target / steps;
-    let current = 0;
-
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(current));
-      }
-    }, stepDuration);
-
-    return () => clearInterval(timer);
-  }, [started, target, duration]);
+  }, [target, duration]);
 
   return (
-    <span ref={ref} className="stat-num">
+    <span ref={ref} className="stat-num" suppressHydrationWarning>
       {count}
       {suffix}
     </span>

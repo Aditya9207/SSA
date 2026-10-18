@@ -201,6 +201,7 @@ const translations = {
     branch_call:   "कॉल करा",
     branch_map:    "नकाशा पाहा",
     branch_whatsapp: "व्हॉट्सअप",
+    branch_wa_msg: "नमस्कार! मला श्री स्वामी समर्थ एजन्सीबद्दल अधिक माहिती हवी आहे.",
 
     // ── Testimonials ─────────────────────────────────────────
     test_badge:  "शेतकऱ्यांचे अभिप्राय",
@@ -496,6 +497,7 @@ const translations = {
     branch_call:   "कॉल करें",
     branch_map:    "नक्शा देखें",
     branch_whatsapp: "WhatsApp",
+    branch_wa_msg: "नमस्ते! मुझे श्री स्वामी समर्थ एजेंसी के बारे में और अधिक जानकारी चाहिए।",
 
     test_badge:  "किसानों की समीक्षाएं",
     test_title:  "हमारे ग्राहक, हमारी ताकत",
@@ -787,6 +789,7 @@ const translations = {
     branch_call:   "Call",
     branch_map:    "View Map",
     branch_whatsapp: "WhatsApp",
+    branch_wa_msg: "Hello! I would like more information about Shree Swami Samarth Agency.",
 
     test_badge:  "Customer Reviews",
     test_title:  "Our Customers, Our Strength",

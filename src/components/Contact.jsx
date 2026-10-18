@@ -210,11 +210,11 @@ export default function Contact({ onShowToast }) {
                 >
                   {isSubmitting ? (
                     <>
-                      <i className="ph-bold ph-spinner spin-anim"></i> {lang === 'en' ? 'Submitting...' : lang === 'hi' ? 'दर्ज हो रहा है...' : 'नोंदवत आहे...'}
+                      <i className="ph-bold ph-spinner spin-anim"></i> <span>{lang === 'en' ? 'Submitting...' : lang === 'hi' ? 'दर्ज हो रहा है...' : 'नोंदवत आहे...'}</span>
                     </>
                   ) : (
                     <>
-                      <i className="ph-bold ph-paper-plane-tilt"></i> {t.form_submit || 'संदेश पाठवा'}
+                      <i className="ph-bold ph-paper-plane-tilt"></i> <span>{t.form_submit || 'संदेश पाठवा'}</span>
                     </>
                   )}
                 </button>
@@ -225,11 +225,11 @@ export default function Contact({ onShowToast }) {
                   className="btn-wa-contact"
                   onClick={handleDirectWhatsApp}
                 >
-                  <i className="ph-bold ph-whatsapp-logo" style={{ fontSize: '1.25rem' }}></i> {t.form_whatsapp || 'व्हॉट्सअप'}
+                  <i className="ph-bold ph-whatsapp-logo" style={{ fontSize: '1.25rem' }}></i> <span>{t.form_whatsapp || 'व्हॉट्सअप'}</span>
                 </button>
               </div>
               <div className="form-privacy-note">
-                <i className="ph-bold ph-shield-check"></i> {t.form_privacy || 'तुमची माहिती पूर्णपणे सुरक्षित राहील. तात्काळ प्रतिसाद मिळेल.'}
+                <i className="ph-bold ph-shield-check"></i> <span>{t.form_privacy || 'तुमची माहिती पूर्णपणे सुरक्षित राहील. तात्काळ प्रतिसाद मिळेल.'}</span>
               </div>
             </form>
           </div>
@@ -253,7 +253,7 @@ export default function Contact({ onShowToast }) {
             <div className="ci-hotline-box">
               <div className="ci-label">{t.ci_hotline_label || 'थेट हेल्पलाइन (कॉल करा)'}</div>
               <a href="tel:+918806595075" className="ci-hotline-num">
-                <i className="ph-bold ph-phone-call"></i> {t.ci_hotline_display || '+९१ ८८०६५९५०७५'}
+                <i className="ph-bold ph-phone-call"></i> <span>{t.ci_hotline_display || '+९१ ८८०६५९५०७५'}</span>
               </a>
             </div>
 
@@ -287,24 +287,24 @@ export default function Contact({ onShowToast }) {
             {/* Branch Contacts */}
             <div className="branch-contacts">
               <div className="bco-head">
-                <i className="ph-bold ph-map-pin"></i> {t.ci_branches_title || 'शाखा संपर्क क्रमांक (थेट कॉल)'}
+                <i className="ph-bold ph-map-pin"></i> <span>{t.ci_branches_title || 'शाखा संपर्क क्रमांक (थेट कॉल)'}</span>
               </div>
               <div className="bco-row">
                 <span className="bco-name">{t.branch1_short || 'कुमठा फाटा (मुख्य शाखा)'}</span>
                 <a href="tel:+918806595075" className="bco-btn">
-                  <i className="ph-bold ph-phone"></i> 8806595075
+                  <i className="ph-bold ph-phone"></i> <span>8806595075</span>
                 </a>
               </div>
               <div className="bco-row">
                 <span className="bco-name">{t.branch2_short || 'सांगली'}</span>
                 <a href="tel:+918806595075" className="bco-btn">
-                  <i className="ph-bold ph-phone"></i> 8806595075
+                  <i className="ph-bold ph-phone"></i> <span>8806595075</span>
                 </a>
               </div>
               <div className="bco-row">
                 <span className="bco-name">{t.branch3_short || 'जत'}</span>
                 <a href="tel:+918806595075" className="bco-btn">
-                  <i className="ph-bold ph-phone"></i> 8806595075
+                  <i className="ph-bold ph-phone"></i> <span>8806595075</span>
                 </a>
               </div>
             </div>

@@ -12,7 +12,7 @@ export default function Exchange() {
         <div className="exchange-layout">
           <div className="exchange-text visible">
             <div className="exchange-offer-tag">
-              <i className="ph-bold ph-tag"></i> {t.exchange_badge || 'रोटाव्हेटर एक्सचेंज व विक्री'}
+              <i className="ph-bold ph-tag"></i> <span>{t.exchange_badge || 'रोटाव्हेटर एक्सचेंज व विक्री'}</span>
             </div>
             <h2 className="exchange-title">
               {t.exchange_title || 'जुन्या रोटाव्हेटरला मिळवा सर्वोत्तम किंमत!'}
@@ -35,7 +35,7 @@ export default function Exchange() {
               className="btn btn-amber btn-lg"
             >
               <i className="ph-bold ph-whatsapp-logo" style={{ fontSize: '1.3rem' }}></i>
-              {t.exchange_cta || 'किंमत जाणून घ्या (व्हॉट्सअप)'}
+              <span>{t.exchange_cta || 'किंमत जाणून घ्या (व्हॉट्सअप)'}</span>
             </a>
           </div>
 
@@ -43,7 +43,7 @@ export default function Exchange() {
           <div className="exchange-valuation-card visible delay-2">
             <div className="ex-card-header">
               <span className="ex-card-badge">
-                <i className="ph-bold ph-lightning"></i> {t.ex_card_badge || 'झटपट प्रक्रिया'}
+                <i className="ph-bold ph-lightning"></i> <span>{t.ex_card_badge || 'झटपट प्रक्रिया'}</span>
               </span>
               <h3 className="ex-card-title">{t.ex_card_title || 'रोटाव्हेटर व्हॅल्यूएशन कसे होते?'}</h3>
             </div>

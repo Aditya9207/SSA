@@ -1,11 +1,13 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
+import Link from 'next/link';
 import { useLanguage } from '../context/LanguageContext';
 import { productData } from '../data/translations';
+import { productsByKey, productsCatalog } from '../data/productsCatalog';
 
 export default function Products({ onOpenEnquiry }) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [activeTab, setActiveTab] = useState('swan');
   const carouselRef = useRef(null);
   const isDragging = useRef(false);
@@ -97,30 +99,61 @@ export default function Products({ onOpenEnquiry }) {
             >
               {currentProducts.map((prod) => {
                 const nameKey = prod.key;
-                const descKey = `${prod.key}_desc`;
-                const prodName = t[nameKey] || nameKey;
-                const prodDesc = t[descKey] || '';
+                const catalogItem = productsByKey[prod.key];
+                const slug = catalogItem ? catalogItem.slug : null;
+                const prodName = (catalogItem && catalogItem.name && (catalogItem.name[lang] || catalogItem.name.en)) || t[nameKey] || nameKey;
+                const prodDesc = (catalogItem && catalogItem.tagline && (catalogItem.tagline[lang] || catalogItem.tagline.en)) || t[descKey] || '';
 
                 return (
                   <div key={prod.key} className="product-card">
-                    <div className="product-img-wrap">
-                      <img src={prod.img} alt={prodName} loading="lazy" />
-                      <div
-                        className="product-icon-badge"
-                        dangerouslySetInnerHTML={{ __html: prod.icon }}
-                      />
-                    </div>
+                    {slug ? (
+                      <Link href={`/products/${slug}`} className="product-img-wrap" style={{ textDecoration: 'none' }}>
+                        <img src={prod.img} alt={prodName} loading="lazy" />
+                      </Link>
+                    ) : (
+                      <div className="product-img-wrap">
+                        <img src={prod.img} alt={prodName} loading="lazy" />
+                      </div>
+                    )}
                     <div className="product-info">
-                      <h3 className="product-name">{prodName}</h3>
+                      <h3 className="product-name">
+                        {slug ? (
+                          <Link href={`/products/${slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                            {prodName}
+                          </Link>
+                        ) : (
+                          prodName
+                        )}
+                      </h3>
                       <p className="product-desc">{prodDesc}</p>
-                      <button
-                        type="button"
-                        suppressHydrationWarning
-                        className="product-enquire"
-                        onClick={() => onOpenEnquiry(prodName)}
-                      >
-                        💬 {t.enquire_btn || 'चौकशी करा'}
-                      </button>
+                      <div className="product-actions">
+                        <button
+                          type="button"
+                          suppressHydrationWarning
+                          className="product-btn-enquire"
+                          onClick={() => onOpenEnquiry(prodName)}
+                          aria-label={`Enquire about ${prodName}`}
+                        >
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                          </svg>
+                          <span>{lang === 'en' ? 'Enquire' : lang === 'hi' ? 'पूछताछ' : 'चौकशी'}</span>
+                        </button>
+                        {slug && (
+                          <Link
+                            href={`/products/${slug}`}
+                            suppressHydrationWarning
+                            className="product-btn-details"
+                            aria-label={`View details for ${prodName}`}
+                          >
+                            <span>{lang === 'en' ? 'Details' : lang === 'hi' ? 'विवरण' : 'माहिती'}</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                              <path d="M5 12h14"/>
+                              <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   </div>
                 );
